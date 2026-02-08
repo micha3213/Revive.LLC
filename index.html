@@ -7,159 +7,130 @@
 
 <style>
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0a0a0f;
-    color:white;
-    overflow-x:hidden;
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#0a0a0f;
+  color:white;
+  overflow-x:hidden;
 }
 
-/* PARTICLES */
+/* particles */
 canvas{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:-1;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
 }
 
-/* NAVBAR */
+/* nav */
 .nav{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    padding:15px 20px;
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(6px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(6px);
 }
 
 .logo{
-    font-size:20px;
-    font-weight:bold;
-    color:#ff4d4d;
-    text-shadow:0 0 15px #ff0000, 0 0 25px #ff0000;
+  font-weight:bold;
+  font-size:20px;
+  color:#ff3c3c;
+  text-shadow:0 0 20px #ff0000;
 }
 
-.menu{
-    position:relative;
-    cursor:pointer;
+.nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+  opacity:.8;
 }
 
-.dropdown{
-    display:none;
-    position:absolute;
-    top:35px;
-    right:0;
-    background:#151515;
-    border-radius:10px;
-    padding:10px;
-    min-width:150px;
+.nav a:hover{
+  opacity:1;
 }
 
-.dropdown a{
-    display:block;
-    color:white;
-    padding:8px;
-    text-decoration:none;
-}
-
-.dropdown a:hover{
-    background:#250000;
-}
-
-.menu:hover .dropdown{
-    display:block;
-}
-
-/* HEADER */
+/* header */
 header{
-    text-align:center;
-    padding:120px 20px 40px;
-    font-size:42px;
-    font-weight:bold;
-    color:#ff4d4d;
-    text-shadow:0 0 25px #ff0000, 0 0 40px #ff0000;
+  text-align:center;
+  padding:120px 20px 40px;
+  font-size:40px;
+  font-weight:bold;
+  color:#ff4d4d;
+  text-shadow:0 0 25px red;
 }
 
-/* PRODUCTS */
+/* products */
 .products{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:25px;
-    padding:20px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  padding:20px;
 }
 
 .card{
-    background:#151515;
-    padding:20px;
-    border-radius:15px;
-    width:260px;
-    text-align:center;
-    box-shadow:0 0 20px rgba(255,0,0,0.5);
-    border:1px solid rgba(255,0,0,0.4);
+  width:260px;
+  background:#151515;
+  border-radius:15px;
+  padding:20px;
+  text-align:center;
+  border:1px solid rgba(255,0,0,.3);
+  box-shadow:0 0 20px rgba(255,0,0,.4);
 }
 
 .card h2{
-    margin-top:0;
-    color:#ff8080;
-}
-
-/* BUTTON */
-.btn{
-    margin-top:15px;
-    padding:10px;
-    border:none;
-    border-radius:10px;
-    width:100%;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-    background:linear-gradient(90deg,#ff0000,#ff4d4d,#ff0000);
-    background-size:200%;
-    animation:move 3s linear infinite;
-    box-shadow:0 0 15px #ff0000;
-}
-
-@keyframes move{
-    0%{background-position:0%;}
-    100%{background-position:200%;}
+  margin-top:0;
+  color:#ff8080;
 }
 
 select{
-    width:100%;
-    padding:8px;
-    margin-top:10px;
-    border-radius:8px;
-    background:#0f0f14;
-    color:white;
-    border:1px solid #ff0000;
+  width:100%;
+  margin-top:10px;
+  padding:8px;
+  border-radius:8px;
+  background:#0f0f14;
+  color:white;
+  border:1px solid red;
+}
+
+/* button */
+.btn{
+  margin-top:15px;
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  background:linear-gradient(90deg,#ff0000,#ff4d4d,#ff0000);
+  background-size:200%;
+  animation:move 3s linear infinite;
+  box-shadow:0 0 15px red;
+}
+
+@keyframes move{
+  0%{background-position:0%;}
+  100%{background-position:200%;}
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    opacity:0.7;
+  text-align:center;
+  padding:30px;
+  opacity:.7;
 }
 
-/* MOBILE */
-@media (max-width:600px){
-  header{
-    font-size:28px;
-    padding:100px 15px 20px;
-  }
-  .products{
-    flex-direction:column;
-    align-items:center;
-  }
-  .card{
-    width:90%;
-  }
+/* mobile */
+@media(max-width:600px){
+  header{font-size:28px;}
+  .card{width:90%;}
 }
 </style>
 </head>
@@ -169,42 +140,43 @@ footer{
 <canvas id="bg"></canvas>
 
 <div class="nav">
-    <div class="logo">Revive.LLC</div>
-    <div class="menu">☰
-        <div class="dropdown">
-            <a href="#">Home</a>
-            <a href="https://discord.gg/DZauvCmGE">Discord</a>
-            <a href="#">Support</a>
-        </div>
-    </div>
+  <div class="logo">Revive.LLC</div>
+  <div>
+    <a href="https://discord.gg/DZauvCmGE">Discord</a>
+    <a href="#">Support</a>
+  </div>
 </div>
 
 <header>
-    Premium Gaming Products
+Premium Gaming Access
 </header>
 
 <section class="products">
 
 <div class="card">
-    <h2>Temp Woofer</h2>
-    <select>
-        <option>1 Day - $3.99</option>
-        <option>1 Week - $13.99</option>
-        <option>1 Month - $29.99</option>
-        <option>Lifetime - $79.99</option>
-    </select>
-    <button class="btn" onclick="buyNow()">Purchase</button>
+  <h2>Temp Woofer</h2>
+  <select>
+    <option>1 Day</option>
+    <option>1 Week</option>
+    <option>1 Month</option>
+    <option>Lifetime</option>
+  </select>
+  <button class="btn" onclick="window.location.href='https://discord.gg/DZauvCmGE'">
+    Get Access
+  </button>
 </div>
 
 <div class="card">
-    <h2>FN Ultimate</h2>
-    <select>
-        <option>1 Day - $4.99</option>
-        <option>1 Week - $16.99</option>
-        <option>1 Month - $33.99</option>
-        <option>Lifetime - $85.99</option>
-    </select>
-    <button class="btn" onclick="buyNow()">Purchase</button>
+  <h2>FN Ultimate</h2>
+  <select>
+    <option>1 Day</option>
+    <option>1 Week</option>
+    <option>1 Month</option>
+    <option>Lifetime</option>
+  </select>
+  <button class="btn" onclick="window.location.href='https://discord.gg/DZauvCmGE'">
+    Get Access
+  </button>
 </div>
 
 </section>
@@ -214,85 +186,35 @@ footer{
 </footer>
 
 <script>
-// ===== redirect =====
-function buyNow(){
-    const box = document.createElement("div");
-    box.innerText = "Opening Discord...";
-    box.style.position="fixed";
-    box.style.bottom="20px";
-    box.style.right="20px";
-    box.style.background="#111";
-    box.style.padding="12px 16px";
-    box.style.borderRadius="10px";
-    box.style.boxShadow="0 0 20px red";
-    box.style.zIndex="999";
-    document.body.appendChild(box);
-
-    setTimeout(()=>{
-        window.location.href = "https://discord.gg/DZauvCmGE";
-    },1200);
-}
-
-
-// activity messages
-const messages = [
- "A new visitor is browsing",
- "Someone joined the Discord",
- "Support is online",
- "Members are active right now"
-];
-
-function notify(){
-   const box = document.createElement("div");
-   box.innerText = messages[Math.floor(Math.random()*messages.length)];
-
-   box.style.position="fixed";
-   box.style.bottom="20px";
-   box.style.left="20px";
-   box.style.background="#0a0a0a";
-   box.style.padding="12px 16px";
-   box.style.borderRadius="10px";
-   box.style.boxShadow="0 0 20px #ff0000";
-   box.style.zIndex="999";
-   box.style.fontSize="14px";
-
-   document.body.appendChild(box);
-   setTimeout(()=>box.remove(),3000);
-}
-
-setInterval(notify,8000);
-
-
-// particles
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particles = [];
 for(let i=0;i<60;i++){
-    particles.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        r:Math.random()*2,
-        d:Math.random()*1
-    });
+  particles.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*2,
+    d:Math.random()*1
+  });
 }
 
 function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle="#ff2b2b";
-    for(let i=0;i<particles.length;i++){
-        let p = particles[i];
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2,true);
-        ctx.fill();
-        p.y += p.d;
-        if(p.y > canvas.height){
-            p.y = 0;
-            p.x = Math.random()*canvas.width;
-        }
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="#ff2b2b";
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fill();
+    p.y+=p.d;
+    if(p.y>canvas.height){
+      p.y=0;
+      p.x=Math.random()*canvas.width;
     }
+  });
 }
 setInterval(draw,30);
 </script>
