@@ -45,15 +45,35 @@ canvas{
   text-shadow:0 0 20px #ff0000;
 }
 
-.nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:15px;
-  opacity:.8;
+.menu{
+  position:relative;
+  cursor:pointer;
 }
 
-.nav a:hover{
-  opacity:1;
+.dropdown{
+  display:none;
+  position:absolute;
+  right:0;
+  top:30px;
+  background:#151515;
+  border-radius:10px;
+  padding:10px;
+  min-width:140px;
+}
+
+.dropdown a{
+  display:block;
+  color:white;
+  padding:8px;
+  text-decoration:none;
+}
+
+.dropdown a:hover{
+  background:#250000;
+}
+
+.menu:hover .dropdown{
+  display:block;
 }
 
 /* header */
@@ -141,9 +161,13 @@ footer{
 
 <div class="nav">
   <div class="logo">Revive.LLC</div>
-  <div>
-    <a href="https://discord.gg/DZauvCmGE">Discord</a>
-    <a href="#">Support</a>
+
+  <div class="menu">☰
+    <div class="dropdown">
+      <a href="#">Home</a>
+      <a href="https://discord.gg/DZauvCmGE">Discord</a>
+      <a href="#">Support</a>
+    </div>
   </div>
 </div>
 
@@ -156,26 +180,26 @@ Premium Gaming Access
 <div class="card">
   <h2>Temp Woofer</h2>
   <select>
-    <option>1 Day</option>
-    <option>1 Week</option>
-    <option>1 Month</option>
-    <option>Lifetime</option>
+    <option>1 Day - $3.99</option>
+    <option>1 Week - $13.99</option>
+    <option>1 Month - $29.99</option>
+    <option>Lifetime - $79.99</option>
   </select>
-  <button class="btn" onclick="window.location.href='https://discord.gg/DZauvCmGE'">
-    Get Access
+  <button class="btn" onclick="window.location.href='payment.html'">
+    Buy Now
   </button>
 </div>
 
 <div class="card">
   <h2>FN Ultimate</h2>
   <select>
-    <option>1 Day</option>
-    <option>1 Week</option>
-    <option>1 Month</option>
-    <option>Lifetime</option>
+    <option>1 Day - $4.99</option>
+    <option>1 Week - $16.99</option>
+    <option>1 Month - $33.99</option>
+    <option>Lifetime - $85.99</option>
   </select>
-  <button class="btn" onclick="window.location.href='https://discord.gg/DZauvCmGE'">
-    Get Access
+  <button class="btn" onclick="window.location.href='payment.html'">
+    Buy Now
   </button>
 </div>
 
