@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revive.LLC</title>
+
+<style>
+:root{
+  --primary:#6c5ce7;
+  --bg:#0f0f14;
+  --card:#1a1a22;
+  --text:#ffffff;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+header{
+  text-align:center;
+  font-size:36px;
+  padding:40px;
+  font-weight:bold;
+  background: linear-gradient(90deg,#6c5ce7,#a29bfe);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.products{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+  padding:40px 20px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:12px;
+  width:280px;
+  text-align:center;
+  box-shadow:0 0 15px rgba(108,92,231,0.5);
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+select{
+  padding:10px;
+  width:100%;
+  margin:10px 0;
+  border-radius:8px;
+  background:#111;
+  color:white;
+  border:1px solid var(--primary);
+}
+
+button{
+  background:var(--primary);
+  border:none;
+  padding:12px;
+  width:100%;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#a29bfe;
+}
+
+footer{
+  margin-top:40px;
+  text-align:center;
+  padding:25px;
+  opacity:.6;
+  background:#1a1a22;
+}
+</style>
+</head>
+
+<body>
+
+<header>Revive.LLC</header>
+
+<section class="products">
+
+  <!-- Product 1 -->
+  <div class="card">
+    <h2>Ultimate Fortnite</h2>
+
+    <label>Select Price</label>
+    <select>
+      <option>$1</option>
+      <option>$13</option>
+      <option>$50</option>
+      <option>$100</option>
+    </select>
+
+    <p>High-performance digital product from Revive.LLC.</p>
+    <button>Purchase</button>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="card">
+    <h2>Simp Fortnite</h2>
+
+    <label>Select Price</label>
+    <select>
+      <option>$1</option>
+      <option>$13</option>
+      <option>$50</option>
+      <option>$100</option>
+    </select>
+
+    <p>Premium access instantly after purchase.</p>
+    <button>Purchase</button>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Revive.LLC — All Rights Reserved
+</footer>
+
+</body>
+</html>
