@@ -43,7 +43,10 @@ canvas{
   font-size:20px;
   color:#ff3c3c;
   text-shadow:0 0 20px #ff0000;
+  text-decoration:none;
 }
+
+.logo:hover{opacity:.85;}
 
 .menu{
   position:relative;
@@ -62,9 +65,7 @@ canvas{
   min-width:140px;
 }
 
-.dropdown.show{
-  display:block;
-}
+.dropdown.show{display:block;}
 
 .dropdown a{
   display:block;
@@ -73,9 +74,7 @@ canvas{
   text-decoration:none;
 }
 
-.dropdown a:hover{
-  background:#250000;
-}
+.dropdown a:hover{background:#250000;}
 
 /* header */
 header{
@@ -137,9 +136,38 @@ select{
   box-shadow:0 0 15px red;
 }
 
-@keyframes move{
-  0%{background-position:0%;}
-  100%{background-position:200%;}
+/* REVIEWS */
+.reviews{
+  margin-top:120px;   /* pushes it down */
+  padding:60px 20px;
+  text-align:center;
+  border-top:1px solid rgba(255,0,0,.3); /* divider */
+}
+
+.reviews h2{
+  color:#ff4d4d;
+  margin-bottom:30px;
+  text-shadow:0 0 15px red;
+}
+
+.reviewGrid{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.review{
+  width:260px;
+  background:#151515;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid rgba(255,0,0,.3);
+}
+
+.stars{
+  color:#FFD700;
+  margin-bottom:8px;
 }
 
 footer{
@@ -148,10 +176,14 @@ footer{
   opacity:.7;
 }
 
-/* mobile */
+@keyframes move{
+  0%{background-position:0%;}
+  100%{background-position:200%;}
+}
+
 @media(max-width:600px){
   header{font-size:28px;}
-  .card{width:90%;}
+  .card,.review{width:90%;}
 }
 </style>
 </head>
@@ -161,7 +193,7 @@ footer{
 <canvas id="bg"></canvas>
 
 <div class="nav">
-  <div class="logo">Revive.LLC</div>
+  <a href="index.html" class="logo">Revive.LLC</a>
 
   <div class="menu" id="menuBtn">☰
     <div class="dropdown">
@@ -186,7 +218,7 @@ Premium Gaming Access
     <option>1 Month - $29.99</option>
     <option>Lifetime - $79.99</option>
   </select>
-  <button class="btn" onclick="window.location.href='https://cash.app/$lucky30332'">
+  <button class="btn" onclick="window.location.href='payment.html'">
     Buy Now
   </button>
 </div>
@@ -199,11 +231,36 @@ Premium Gaming Access
     <option>1 Month - $33.99</option>
     <option>Lifetime - $85.99</option>
   </select>
-  <button class="btn" onclick="window.location.href='https://cash.app/$lucky30332'">
+  <button class="btn" onclick="window.location.href='payment.html'">
     Buy Now
   </button>
 </div>
 
+</section>
+
+<!-- REVIEWS AT BOTTOM -->
+<section class="reviews">
+  <h2>Customer Reviews</h2>
+
+  <div class="reviewGrid">
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      Fast delivery and super easy setup. Support helped instantly.
+      <br><br>— vxnny
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      Been using for weeks. Stable and worth every dollar.
+      <br><br>— Ghost
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      Payment was quick and I got access right away.
+      <br><br>— Nova
+    </div>
+  </div>
 </section>
 
 <footer>
@@ -211,7 +268,6 @@ Premium Gaming Access
 </footer>
 
 <script>
-/* dropdown click toggle */
 const menu = document.getElementById("menuBtn");
 const dropdown = menu.querySelector(".dropdown");
 
@@ -224,7 +280,6 @@ document.addEventListener("click", () => {
   dropdown.classList.remove("show");
 });
 
-/* particles */
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
