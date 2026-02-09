@@ -1,54 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Checkout - Revive.LLC</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment | Revive.LLC</title>
 
 <style>
 body{
-  font-family:Arial;
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
   background:#0a0a0f;
   color:white;
   text-align:center;
 }
 
-.box{
-  max-width:400px;
-  margin:120px auto;
-  background:#151515;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 0 20px red;
+.header{
+  padding:60px 20px 20px;
+  font-size:32px;
+  font-weight:bold;
+  color:#ff4d4d;
+  text-shadow:0 0 20px red;
 }
 
-button{
-  width:100%;
-  padding:12px;
-  margin-top:15px;
+.payments{
+  max-width:400px;
+  margin:30px auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.payBtn{
+  padding:15px;
   border:none;
-  border-radius:8px;
-  background:red;
-  color:white;
+  border-radius:12px;
+  font-size:16px;
   font-weight:bold;
+  cursor:pointer;
+  color:white;
+  background:linear-gradient(90deg,#ff0000,#ff4d4d,#ff0000);
+  background-size:200%;
+  animation:move 3s linear infinite;
+  box-shadow:0 0 15px red;
+}
+
+.payBtn:hover{
+  transform:scale(1.05);
+}
+
+.back{
+  margin-top:25px;
+  display:inline-block;
+  color:#ff8080;
+  text-decoration:none;
+}
+
+@keyframes move{
+  0%{background-position:0%;}
+  100%{background-position:200%;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="box">
-<h2>Finish Payment</h2>
-
-<p>You will be redirected to our Discord.</p>
-
-<button onclick="go()">Continue</button>
+<div class="header">
+Choose Payment Method
 </div>
 
-<script>
-function go(){
-  window.location.href = "https://discord.gg/DZauvCmGE";
-}
-</script>
+<div class="payments">
+
+<button class="payBtn" onclick="window.location.href='https://cash.app/$lucky30332'">
+Pay with Cash App
+</button>
+
+<button class="payBtn" onclick="window.location.href='https://www.paypal.com/'">
+Pay with PayPal
+</button>
+
+<button class="payBtn" onclick="window.location.href='bitcoin.html'">
+Pay with Bitcoin
+</button>
+
+<button class="payBtn" onclick="window.location.href='https://buy.stripe.com/'">
+Pay with Card
+</button>
+
+</div>
+
+<a class="back" href="index.html">← Back to store</a>
 
 </body>
 </html>
