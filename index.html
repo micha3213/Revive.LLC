@@ -9,19 +9,9 @@
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background:#0a0a0f;
+  background:#0f1115;
   color:white;
   overflow-x:hidden;
-}
-
-/* particles */
-canvas{
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  z-index:-1;
 }
 
 /* nav */
@@ -34,23 +24,20 @@ canvas{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(0,0,0,.6);
-  backdrop-filter:blur(6px);
+  background:#0b0d12;
+  border-bottom:1px solid #1f222a;
 }
 
 .logo{
   font-weight:bold;
   font-size:20px;
-  color:#ff3c3c;
-  text-shadow:0 0 20px #ff0000;
+  color:#ff4d4d;
   text-decoration:none;
 }
-.logo:hover{opacity:.85;}
 
 .menu{
   position:relative;
   cursor:pointer;
-  user-select:none;
 }
 
 .dropdown{
@@ -58,10 +45,11 @@ canvas{
   position:absolute;
   right:0;
   top:30px;
-  background:#151515;
-  border-radius:10px;
+  background:#151821;
+  border-radius:8px;
   padding:10px;
   min-width:140px;
+  border:1px solid #222;
 }
 
 .dropdown.show{display:block;}
@@ -73,80 +61,78 @@ canvas{
   text-decoration:none;
 }
 
-.dropdown a:hover{background:#250000;}
+.dropdown a:hover{
+  background:#20242f;
+}
 
 /* header */
 header{
   text-align:center;
   padding:120px 20px 40px;
-  font-size:40px;
+  font-size:36px;
   font-weight:bold;
-  color:#ff4d4d;
-  text-shadow:0 0 25px red;
 }
 
 /* products */
 .products{
   display:flex;
   justify-content:center;
-  gap:25px;
+  gap:20px;
   flex-wrap:wrap;
   padding:20px;
 }
 
 .card{
-  width:260px;
-  background:#151515;
-  border-radius:15px;
+  width:300px;
+  background:#151821;
+  border-radius:12px;
   padding:20px;
   text-align:center;
-  border:1px solid rgba(255,0,0,.3);
-  box-shadow:0 0 20px rgba(255,0,0,.4);
+  border:1px solid #222;
 }
 
 .card h2{
   margin-top:0;
-  color:#ff8080;
+  color:#ff6b6b;
 }
 
 select{
   width:100%;
   margin-top:10px;
-  padding:8px;
+  padding:10px;
   border-radius:8px;
-  background:#0f0f14;
+  background:#0f1115;
   color:white;
-  border:1px solid red;
+  border:1px solid #2a2f3a;
 }
 
 /* button */
 .btn{
   margin-top:15px;
   width:100%;
-  padding:10px;
+  padding:12px;
   border:none;
-  border-radius:10px;
+  border-radius:8px;
   color:white;
   font-weight:bold;
   cursor:pointer;
-  background:linear-gradient(90deg,#ff0000,#ff4d4d,#ff0000);
-  background-size:200%;
-  animation:move 3s linear infinite;
-  box-shadow:0 0 15px red;
+  background:#ff4d4d;
+}
+
+.btn:hover{
+  background:#ff2f2f;
 }
 
 /* REVIEWS */
 .reviews{
-  margin-top:120px;
+  margin-top:100px;
   padding:60px 0;
   text-align:center;
-  border-top:1px solid rgba(255,0,0,.3);
+  border-top:1px solid #222;
 }
 
 .reviews h2{
-  color:#ff4d4d;
   margin-bottom:30px;
-  text-shadow:0 0 15px red;
 }
 
 .slider{overflow:hidden;}
@@ -164,10 +150,10 @@ select{
 
 .review{
   width:260px;
-  background:#151515;
+  background:#151821;
   padding:15px;
-  border-radius:12px;
-  border:1px solid rgba(255,0,0,.3);
+  border-radius:10px;
+  border:1px solid #222;
 }
 
 .stars{
@@ -175,16 +161,15 @@ select{
   margin-bottom:8px;
 }
 
-/* LIVE PURCHASE POPUP */
+/* popup */
 .popup{
   position:fixed;
   bottom:20px;
   left:20px;
-  background:#151515;
-  padding:12px 16px;
-  border-radius:12px;
-  border:1px solid rgba(0,255,0,.5);
-  box-shadow:0 0 15px rgba(0,255,0,.6);
+  background:#151821;
+  padding:10px 14px;
+  border-radius:8px;
+  border:1px solid #2a2f3a;
   font-size:14px;
   opacity:0;
   transform:translateY(20px);
@@ -199,12 +184,7 @@ select{
 footer{
   text-align:center;
   padding:30px;
-  opacity:.7;
-}
-
-@keyframes move{
-  0%{background-position:0%;}
-  100%{background-position:200%;}
+  opacity:.6;
 }
 
 @keyframes scroll{
@@ -212,16 +192,13 @@ footer{
   to{transform:translateX(-50%);}
 }
 
-@media(max-width:600px){
-  header{font-size:28px;}
-  .card,.review{width:90%;}
+@media(max-width:700px){
+  .card{width:90%;}
 }
 </style>
 </head>
 
 <body>
-
-<canvas id="bg"></canvas>
 
 <div class="nav">
   <a href="index.html" class="logo">Revive.LLC</a>
@@ -240,6 +217,7 @@ Premium Gaming Access
 </header>
 
 <section class="products">
+
 <div class="card">
   <h2>Temp Woofer</h2>
   <select>
@@ -265,23 +243,19 @@ Premium Gaming Access
     Buy Now
   </button>
 </div>
+
 </section>
 
-<!-- SLIDING REVIEWS -->
 <section class="reviews">
   <h2>Customer Reviews</h2>
-
   <div class="slider">
     <div class="slideTrack">
-      <div class="review"><div class="stars">★★★★★</div>Fast delivery and super easy setup.<br><br>— vxnny</div>
-      <div class="review"><div class="stars">★★★★★</div>Stable and worth every dollar.<br><br>— Ghost</div>
-      <div class="review"><div class="stars">★★★★★</div>Got access right away.<br><br>— Nova</div>
-      <div class="review"><div class="stars">★★★★★</div>Clean UI, works perfectly.<br><br>— Jax</div>
-      <div class="review"><div class="stars">★★★★★</div>Support is fast and helpful.<br><br>— Orbit</div>
+      <div class="review"><div class="stars">★★★★★</div>Fast delivery.<br><br>— Alex</div>
+      <div class="review"><div class="stars">★★★★★</div>Works perfectly.<br><br>— Jay</div>
+      <div class="review"><div class="stars">★★★★★</div>Worth it.<br><br>— Chris</div>
 
-      <!-- duplicates -->
-      <div class="review"><div class="stars">★★★★★</div>Fast delivery and super easy setup.<br><br>— vxnny</div>
-      <div class="review"><div class="stars">★★★★★</div>Stable and worth every dollar.<br><br>— Ghost</div>
+      <div class="review"><div class="stars">★★★★★</div>Fast delivery.<br><br>— Alex</div>
+      <div class="review"><div class="stars">★★★★★</div>Works perfectly.<br><br>— Jay</div>
     </div>
   </div>
 </section>
@@ -290,46 +264,22 @@ Premium Gaming Access
 © 2025 Revive.LLC
 </footer>
 
-<!-- POPUP -->
 <div class="popup" id="popup"></div>
 
 <script>
-const menu = document.getElementById("menuBtn");
-const dropdown = menu.querySelector(".dropdown");
-menu.addEventListener("click", (e)=>{e.stopPropagation();dropdown.classList.toggle("show");});
-document.addEventListener("click", ()=>dropdown.classList.remove("show"));
+const menu=document.getElementById("menuBtn");
+const dropdown=menu.querySelector(".dropdown");
+menu.addEventListener("click",(e)=>{e.stopPropagation();dropdown.classList.toggle("show");});
+document.addEventListener("click",()=>dropdown.classList.remove("show"));
 
-/* particles */
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-let particles=[];
-for(let i=0;i<60;i++){
-  particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2,d:Math.random()*1});
-}
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle="#ff2b2b";
-  particles.forEach(p=>{
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fill();
-    p.y+=p.d;
-    if(p.y>canvas.height){p.y=0;p.x=Math.random()*canvas.width;}
-  });
-}
-setInterval(draw,30);
-
-/* FAKE LIVE SALES */
-const names=["Jaxon","Mia","Chris","Liam","Noah","Alex","Jay","Ethan"];
+const names=["Jaxon","Mia","Chris","Liam","Noah"];
 const items=["1 Day","1 Week","1 Month","Lifetime"];
 const popup=document.getElementById("popup");
 
 function showPopup(){
   const name=names[Math.floor(Math.random()*names.length)];
   const item=items[Math.floor(Math.random()*items.length)];
-  popup.innerHTML="🟢 "+name+" just purchased "+item;
+  popup.innerHTML="🟢 "+name+" purchased "+item;
   popup.classList.add("show");
   setTimeout(()=>popup.classList.remove("show"),4000);
 }
