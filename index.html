@@ -48,6 +48,7 @@ canvas{
 .menu{
   position:relative;
   cursor:pointer;
+  user-select:none;
 }
 
 .dropdown{
@@ -61,6 +62,10 @@ canvas{
   min-width:140px;
 }
 
+.dropdown.show{
+  display:block;
+}
+
 .dropdown a{
   display:block;
   color:white;
@@ -70,10 +75,6 @@ canvas{
 
 .dropdown a:hover{
   background:#250000;
-}
-
-.menu:hover .dropdown{
-  display:block;
 }
 
 /* header */
@@ -162,7 +163,7 @@ footer{
 <div class="nav">
   <div class="logo">Revive.LLC</div>
 
-  <div class="menu">☰
+  <div class="menu" id="menuBtn">☰
     <div class="dropdown">
       <a href="#">Home</a>
       <a href="https://discord.gg/DZauvCmGE">Discord</a>
@@ -210,6 +211,20 @@ Premium Gaming Access
 </footer>
 
 <script>
+/* dropdown click toggle */
+const menu = document.getElementById("menuBtn");
+const dropdown = menu.querySelector(".dropdown");
+
+menu.addEventListener("click", (e) => {
+  e.stopPropagation();
+  dropdown.classList.toggle("show");
+});
+
+document.addEventListener("click", () => {
+  dropdown.classList.remove("show");
+});
+
+/* particles */
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
