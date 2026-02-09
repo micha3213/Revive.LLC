@@ -3,83 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finish Payment | Revive.LLC</title>
+<title>Choose Payment | Revive.LLC</title>
 
 <style>
 body{
   margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
   font-family:Arial, Helvetica, sans-serif;
-  background:#0a0a0f;
+  background:#0f1115;
   color:white;
 }
 
-.box{
-  width:90%;
-  max-width:420px;
-  background:#151515;
-  padding:30px;
-  border-radius:18px;
-  text-align:center;
-  border:1px solid rgba(255,0,0,.3);
-  box-shadow:0 0 30px rgba(255,0,0,.6);
+/* nav */
+.nav{
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#0b0d12;
+  border-bottom:1px solid #1f222a;
 }
 
-h1{
-  margin-top:0;
-  color:#ffffff;
-}
-
-p{
-  opacity:.8;
-}
-
-.btn{
-  margin-top:20px;
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:12px;
-  font-size:16px;
+.logo{
   font-weight:bold;
+  font-size:20px;
+  color:#ff4d4d;
+  text-decoration:none;
+}
+
+/* header */
+header{
+  text-align:center;
+  padding:50px 20px 10px;
+}
+
+header p{
+  opacity:.7;
+}
+
+/* methods */
+.methods{
+  max-width:900px;
+  margin:40px auto;
+  display:flex;
+  gap:20px;
+  padding:0 20px;
+  flex-wrap:wrap;
+}
+
+.method{
+  flex:1;
+  min-width:220px;
+  background:#151821;
+  border:1px solid #222;
+  border-radius:12px;
+  padding:25px;
+  text-align:center;
   cursor:pointer;
-  color:white;
-  background:linear-gradient(90deg,#ff0000,#ff4d4d,#ff0000);
-  background-size:200%;
-  animation:move 3s linear infinite;
-  box-shadow:0 0 15px red;
+  transition:.2s;
 }
 
-.btn:hover{
-  transform:scale(1.05);
+.method:hover{
+  transform:translateY(-3px);
+  border-color:#ff4d4d;
 }
 
-@keyframes move{
-  0%{background-position:0%;}
-  100%{background-position:200%;}
+.method img{
+  width:40px;
+  height:40px;
+  margin-bottom:12px;
+}
+
+.method h2{
+  margin:0;
+  font-size:18px;
+}
+
+/* back */
+.back{
+  text-align:center;
+  margin:30px;
+}
+
+.back a{
+  color:#ff4d4d;
+  text-decoration:none;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  border-top:1px solid #222;
+  margin-top:60px;
+  opacity:.6;
 }
 </style>
 </head>
 
 <body>
 
-<div class="box">
-  <h1>Finish Payment</h1>
-  <p>You will be redirected to Cash App.</p>
-
-  <button class="btn" onclick="goPay()">
-    Continue
-  </button>
+<div class="nav">
+  <a href="index.html" class="logo">Revive.LLC</a>
 </div>
 
-<script>
-function goPay(){
-  window.location.href = "https://cash.app/$lucky30332";
-}
-</script>
+<header>
+  <h1>How would you like to pay?</h1>
+  <p>Select a payment method below.</p>
+</header>
+
+<section class="methods">
+
+  <!-- CASH APP -->
+  <div class="method" onclick="window.location.href='https://cash.app/$lucky30332'">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Cash_App_Logo.png">
+    <h2>Cash App</h2>
+  </div>
+
+  <!-- PAYPAL -->
+  <div class="method" onclick="window.location.href='#'">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg">
+    <h2>PayPal</h2>
+  </div>
+
+  <!-- BITCOIN -->
+  <div class="method" onclick="window.location.href='bitcoin.html'">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg">
+    <h2>Bitcoin</h2>
+  </div>
+
+</section>
+
+<div class="back">
+  <a href="index.html">← Back to store</a>
+</div>
+
+<footer>
+© 2025 Revive.LLC
+</footer>
 
 </body>
 </html>
