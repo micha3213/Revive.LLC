@@ -45,7 +45,6 @@ canvas{
   text-shadow:0 0 20px #ff0000;
   text-decoration:none;
 }
-
 .logo:hover{opacity:.85;}
 
 .menu{
@@ -138,10 +137,10 @@ select{
 
 /* REVIEWS */
 .reviews{
-  margin-top:120px;   /* pushes it down */
-  padding:60px 20px;
+  margin-top:120px;
+  padding:60px 0;
   text-align:center;
-  border-top:1px solid rgba(255,0,0,.3); /* divider */
+  border-top:1px solid rgba(255,0,0,.3);
 }
 
 .reviews h2{
@@ -150,11 +149,17 @@ select{
   text-shadow:0 0 15px red;
 }
 
-.reviewGrid{
+.slider{overflow:hidden;}
+
+.slideTrack{
   display:flex;
-  justify-content:center;
   gap:20px;
-  flex-wrap:wrap;
+  width:max-content;
+  animation:scroll 25s linear infinite;
+}
+
+.slider:hover .slideTrack{
+  animation-play-state:paused;
 }
 
 .review{
@@ -170,6 +175,27 @@ select{
   margin-bottom:8px;
 }
 
+/* LIVE PURCHASE POPUP */
+.popup{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#151515;
+  padding:12px 16px;
+  border-radius:12px;
+  border:1px solid rgba(0,255,0,.5);
+  box-shadow:0 0 15px rgba(0,255,0,.6);
+  font-size:14px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:.4s;
+}
+
+.popup.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 footer{
   text-align:center;
   padding:30px;
@@ -179,6 +205,11 @@ footer{
 @keyframes move{
   0%{background-position:0%;}
   100%{background-position:200%;}
+}
+
+@keyframes scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
 }
 
 @media(max-width:600px){
@@ -209,7 +240,6 @@ Premium Gaming Access
 </header>
 
 <section class="products">
-
 <div class="card">
   <h2>Temp Woofer</h2>
   <select>
@@ -235,30 +265,23 @@ Premium Gaming Access
     Buy Now
   </button>
 </div>
-
 </section>
 
-<!-- REVIEWS AT BOTTOM -->
+<!-- SLIDING REVIEWS -->
 <section class="reviews">
   <h2>Customer Reviews</h2>
 
-  <div class="reviewGrid">
-    <div class="review">
-      <div class="stars">★★★★★</div>
-      Fast delivery and super easy setup. Support helped instantly.
-      <br><br>— vxnny
-    </div>
+  <div class="slider">
+    <div class="slideTrack">
+      <div class="review"><div class="stars">★★★★★</div>Fast delivery and super easy setup.<br><br>— vxnny</div>
+      <div class="review"><div class="stars">★★★★★</div>Stable and worth every dollar.<br><br>— Ghost</div>
+      <div class="review"><div class="stars">★★★★★</div>Got access right away.<br><br>— Nova</div>
+      <div class="review"><div class="stars">★★★★★</div>Clean UI, works perfectly.<br><br>— Jax</div>
+      <div class="review"><div class="stars">★★★★★</div>Support is fast and helpful.<br><br>— Orbit</div>
 
-    <div class="review">
-      <div class="stars">★★★★★</div>
-      Been using for weeks. Stable and worth every dollar.
-      <br><br>— Ghost
-    </div>
-
-    <div class="review">
-      <div class="stars">★★★★★</div>
-      Payment was quick and I got access right away.
-      <br><br>— Nova
+      <!-- duplicates -->
+      <div class="review"><div class="stars">★★★★★</div>Fast delivery and super easy setup.<br><br>— vxnny</div>
+      <div class="review"><div class="stars">★★★★★</div>Stable and worth every dollar.<br><br>— Ghost</div>
     </div>
   </div>
 </section>
@@ -267,35 +290,24 @@ Premium Gaming Access
 © 2025 Revive.LLC
 </footer>
 
+<!-- POPUP -->
+<div class="popup" id="popup"></div>
+
 <script>
 const menu = document.getElementById("menuBtn");
 const dropdown = menu.querySelector(".dropdown");
+menu.addEventListener("click", (e)=>{e.stopPropagation();dropdown.classList.toggle("show");});
+document.addEventListener("click", ()=>dropdown.classList.remove("show"));
 
-menu.addEventListener("click", (e) => {
-  e.stopPropagation();
-  dropdown.classList.toggle("show");
-});
-
-document.addEventListener("click", () => {
-  dropdown.classList.remove("show");
-});
-
+/* particles */
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
-let particles = [];
+let particles=[];
 for(let i=0;i<60;i++){
-  particles.push({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*2,
-    d:Math.random()*1
-  });
+  particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2,d:Math.random()*1});
 }
-
 function draw(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.fillStyle="#ff2b2b";
@@ -304,13 +316,26 @@ function draw(){
     ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
     ctx.fill();
     p.y+=p.d;
-    if(p.y>canvas.height){
-      p.y=0;
-      p.x=Math.random()*canvas.width;
-    }
+    if(p.y>canvas.height){p.y=0;p.x=Math.random()*canvas.width;}
   });
 }
 setInterval(draw,30);
+
+/* FAKE LIVE SALES */
+const names=["Jaxon","Mia","Chris","Liam","Noah","Alex","Jay","Ethan"];
+const items=["1 Day","1 Week","1 Month","Lifetime"];
+const popup=document.getElementById("popup");
+
+function showPopup(){
+  const name=names[Math.floor(Math.random()*names.length)];
+  const item=items[Math.floor(Math.random()*items.length)];
+  popup.innerHTML="🟢 "+name+" just purchased "+item;
+  popup.classList.add("show");
+  setTimeout(()=>popup.classList.remove("show"),4000);
+}
+
+setInterval(showPopup,7000);
+setTimeout(showPopup,2000);
 </script>
 
 </body>
