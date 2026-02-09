@@ -3,35 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment | Revive.LLC</title>
+<title>Finish Payment | Revive.LLC</title>
 
 <style>
 body{
   margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   font-family:Arial, Helvetica, sans-serif;
   background:#0a0a0f;
   color:white;
+}
+
+.box{
+  width:90%;
+  max-width:420px;
+  background:#151515;
+  padding:30px;
+  border-radius:18px;
   text-align:center;
+  border:1px solid rgba(255,0,0,.3);
+  box-shadow:0 0 30px rgba(255,0,0,.6);
 }
 
-.header{
-  padding:60px 20px 20px;
-  font-size:32px;
-  font-weight:bold;
-  color:#ff4d4d;
-  text-shadow:0 0 20px red;
+h1{
+  margin-top:0;
+  color:#ffffff;
 }
 
-.payments{
-  max-width:400px;
-  margin:30px auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
+p{
+  opacity:.8;
 }
 
-.payBtn{
-  padding:15px;
+.btn{
+  margin-top:20px;
+  width:100%;
+  padding:14px;
   border:none;
   border-radius:12px;
   font-size:16px;
@@ -44,15 +53,8 @@ body{
   box-shadow:0 0 15px red;
 }
 
-.payBtn:hover{
+.btn:hover{
   transform:scale(1.05);
-}
-
-.back{
-  margin-top:25px;
-  display:inline-block;
-  color:#ff8080;
-  text-decoration:none;
 }
 
 @keyframes move{
@@ -64,31 +66,20 @@ body{
 
 <body>
 
-<div class="header">
-Choose Payment Method
+<div class="box">
+  <h1>Finish Payment</h1>
+  <p>You will be redirected to Cash App.</p>
+
+  <button class="btn" onclick="goPay()">
+    Continue
+  </button>
 </div>
 
-<div class="payments">
-
-<button class="payBtn" onclick="window.location.href='https://cash.app/$lucky30332'">
-Pay with Cash App
-</button>
-
-<button class="payBtn" onclick="window.location.href='https://www.paypal.com/'">
-Pay with PayPal
-</button>
-
-<button class="payBtn" onclick="window.location.href='bitcoin.html'">
-Pay with Bitcoin
-</button>
-
-<button class="payBtn" onclick="window.location.href='https://buy.stripe.com/'">
-Pay with Card
-</button>
-
-</div>
-
-<a class="back" href="index.html">← Back to store</a>
+<script>
+function goPay(){
+  window.location.href = "https://cash.app/$lucky30332";
+}
+</script>
 
 </body>
 </html>
