@@ -61,9 +61,7 @@ body{
   text-decoration:none;
 }
 
-.dropdown a:hover{
-  background:#20242f;
-}
+.dropdown a:hover{background:#20242f;}
 
 /* header */
 header{
@@ -106,7 +104,6 @@ select{
   border:1px solid #2a2f3a;
 }
 
-/* button */
 .btn{
   margin-top:15px;
   width:100%;
@@ -119,20 +116,14 @@ select{
   background:#ff4d4d;
 }
 
-.btn:hover{
-  background:#ff2f2f;
-}
+.btn:hover{background:#ff2f2f;}
 
-/* REVIEWS */
+/* reviews */
 .reviews{
   margin-top:100px;
   padding:60px 0;
   text-align:center;
   border-top:1px solid #222;
-}
-
-.reviews h2{
-  margin-bottom:30px;
 }
 
 .slider{overflow:hidden;}
@@ -144,10 +135,6 @@ select{
   animation:scroll 25s linear infinite;
 }
 
-.slider:hover .slideTrack{
-  animation-play-state:paused;
-}
-
 .review{
   width:260px;
   background:#151821;
@@ -156,34 +143,33 @@ select{
   border:1px solid #222;
 }
 
-.stars{
-  color:#FFD700;
-  margin-bottom:8px;
+.stars{color:#FFD700;margin-bottom:8px;}
+
+/* info sections */
+.info{
+  max-width:1000px;
+  margin:80px auto;
+  padding:0 20px;
 }
 
-/* popup */
-.popup{
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  background:#151821;
-  padding:10px 14px;
-  border-radius:8px;
-  border:1px solid #2a2f3a;
+.info h2{
+  margin-bottom:15px;
+  border-bottom:1px solid #222;
+  padding-bottom:5px;
+}
+
+.info p{
+  color:#b9c0d4;
+  line-height:1.6;
   font-size:14px;
-  opacity:0;
-  transform:translateY(20px);
-  transition:.4s;
 }
 
-.popup.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
+/* footer */
 footer{
   text-align:center;
   padding:30px;
+  border-top:1px solid #222;
+  margin-top:60px;
   opacity:.6;
 }
 
@@ -226,9 +212,7 @@ Premium Gaming Access
     <option>1 Month - $29.99</option>
     <option>Lifetime - $79.99</option>
   </select>
-  <button class="btn" onclick="window.location.href='payment.html'">
-    Buy Now
-  </button>
+  <button class="btn" onclick="window.location.href='payment.html'">Buy Now</button>
 </div>
 
 <div class="card">
@@ -239,9 +223,7 @@ Premium Gaming Access
     <option>1 Month - $33.99</option>
     <option>Lifetime - $85.99</option>
   </select>
-  <button class="btn" onclick="window.location.href='payment.html'">
-    Buy Now
-  </button>
+  <button class="btn" onclick="window.location.href='payment.html'">Buy Now</button>
 </div>
 
 </section>
@@ -260,32 +242,51 @@ Premium Gaming Access
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section class="info">
+  <h2>How It Works</h2>
+  <p>
+  Choose your plan, complete the payment, and contact our support team with your proof of purchase.
+  Our staff will verify your order and provide access instructions.
+  </p>
+</section>
+
+<!-- DELIVERY -->
+<section class="info">
+  <h2>Delivery Expectations</h2>
+  <p>
+  Most orders are handled within minutes during support hours.
+  In busy periods, delivery may take longer. Please be patient and avoid opening multiple tickets.
+  </p>
+</section>
+
+<!-- SUPPORT HOURS -->
+<section class="info">
+  <h2>Support Hours</h2>
+  <p>
+  Support is typically available daily. Response times may vary depending on workload and time zone.
+  For the fastest help, please include payment confirmation when you contact us.
+  </p>
+</section>
+
+<!-- POLICY -->
+<section class="info">
+  <h2>Policy</h2>
+  <p>
+  All sales are considered final once access has been delivered.
+  By purchasing, you agree to follow our terms of service and community guidelines.
+  </p>
+</section>
+
 <footer>
 © 2025 Revive.LLC
 </footer>
-
-<div class="popup" id="popup"></div>
 
 <script>
 const menu=document.getElementById("menuBtn");
 const dropdown=menu.querySelector(".dropdown");
 menu.addEventListener("click",(e)=>{e.stopPropagation();dropdown.classList.toggle("show");});
 document.addEventListener("click",()=>dropdown.classList.remove("show"));
-
-const names=["Jaxon","Mia","Chris","Liam","Noah"];
-const items=["1 Day","1 Week","1 Month","Lifetime"];
-const popup=document.getElementById("popup");
-
-function showPopup(){
-  const name=names[Math.floor(Math.random()*names.length)];
-  const item=items[Math.floor(Math.random()*items.length)];
-  popup.innerHTML="🟢 "+name+" purchased "+item;
-  popup.classList.add("show");
-  setTimeout(()=>popup.classList.remove("show"),4000);
-}
-
-setInterval(showPopup,7000);
-setTimeout(showPopup,2000);
 </script>
 
 </body>
