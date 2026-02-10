@@ -40,9 +40,9 @@ header p{
   opacity:.7;
 }
 
-/* methods */
+/* grid */
 .methods{
-  max-width:900px;
+  max-width:1000px;
   margin:40px auto;
   display:flex;
   gap:20px;
@@ -52,7 +52,7 @@ header p{
 
 .method{
   flex:1;
-  min-width:220px;
+  min-width:200px;
   background:#151821;
   border:1px solid #222;
   border-radius:12px;
@@ -68,14 +68,15 @@ header p{
 }
 
 .method img{
-  width:40px;
-  height:40px;
+  width:42px;
+  height:42px;
+  object-fit:contain;
   margin-bottom:12px;
 }
 
 .method h2{
   margin:0;
-  font-size:18px;
+  font-size:16px;
 }
 
 /* back */
@@ -114,19 +115,25 @@ footer{
 
   <!-- CASH APP -->
   <div class="method" onclick="window.location.href='https://cash.app/$lucky30332'">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Cash_App_Logo.png">
+    <img src="https://cdn.simpleicons.org/cashapp/00C244">
     <h2>Cash App</h2>
   </div>
 
   <!-- PAYPAL -->
   <div class="method" onclick="window.location.href='#'">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg">
+    <img src="https://cdn.simpleicons.org/paypal/00457C">
     <h2>PayPal</h2>
+  </div>
+
+  <!-- VENMO -->
+  <div class="method" onclick="window.location.href='https://venmo.com/YOURNAME'">
+    <img src="https://cdn.simpleicons.org/venmo/008CFF">
+    <h2>Venmo</h2>
   </div>
 
   <!-- BITCOIN -->
   <div class="method" onclick="window.location.href='bitcoin.html'">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg">
+    <img src="https://cdn.simpleicons.org/bitcoin/F7931A">
     <h2>Bitcoin</h2>
   </div>
 
