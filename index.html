@@ -1,246 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Revive.LLC</title>
-
-<style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#0f1115;
-  color:white;
-  overflow-x:hidden;
-}
-
-/* nav */
-.nav{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  padding:15px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#0b0d12;
-  border-bottom:1px solid #1f222a;
-}
-
-.logo{
-  font-weight:bold;
-  font-size:20px;
-  color:#ff4d4d;
-  text-decoration:none;
-}
-
-.menu{
-  position:relative;
-  cursor:pointer;
-}
-
-.dropdown{
-  display:none;
-  position:absolute;
-  right:0;
-  top:30px;
-  background:#151821;
-  border-radius:8px;
-  padding:10px;
-  min-width:140px;
-  border:1px solid #222;
-}
-
-.dropdown.show{display:block;}
-
-.dropdown a{
-  display:block;
-  color:white;
-  padding:8px;
-  text-decoration:none;
-}
-
-.dropdown a:hover{background:#20242f;}
-
-/* header */
-header{
-  text-align:center;
-  padding:120px 20px 40px;
-  font-size:36px;
-  font-weight:bold;
-}
-
-/* products */
-.products{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-  padding:20px;
-}
-
-.card{
-  width:300px;
-  background:#151821;
-  border-radius:12px;
-  padding:20px;
-  text-align:center;
-  border:1px solid #222;
-}
-
-.card h2{
-  margin-top:0;
-  color:#ff6b6b;
-}
-
-select{
-  width:100%;
-  margin-top:10px;
-  padding:10px;
-  border-radius:8px;
-  background:#0f1115;
-  color:white;
-  border:1px solid #2a2f3a;
-}
-
-.btn{
-  margin-top:15px;
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:8px;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-  background:#ff4d4d;
-}
-
-.btn:hover{background:#ff2f2f;}
-
-/* info sections */
-.info{
-  max-width:1000px;
-  margin:80px auto;
-  padding:0 20px;
-}
-
-.info h2{
-  margin-bottom:15px;
-  border-bottom:1px solid #222;
-  padding-bottom:5px;
-}
-
-.info p{
-  color:#b9c0d4;
-  line-height:1.6;
-  font-size:14px;
-}
-
-/* footer */
-footer{
-  text-align:center;
-  padding:30px;
-  border-top:1px solid #222;
-  margin-top:60px;
-  opacity:.6;
-}
-
-@media(max-width:700px){
-  .card{width:90%;}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; line-height: 1.6; padding: 0 20px; }
+    h1, h2 { color: #333; }
+    a { color: #1a73e8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
-
 <body>
 
-<div class="nav">
-  <a href="index.html" class="logo">Revive.LLC</a>
+<h1>Terms of Service</h1>
 
-  <div class="menu" id="menuBtn">☰
-    <div class="dropdown">
-      <a href="#">Home</a>
-      <a href="https://discord.gg/DZauvCmGE">Discord</a>
-      <a href="#">Support</a>
-    </div>
-  </div>
-</div>
+<p>Effective Date: February 12, 2026</p>
 
-<header>
-Premium Gaming Access
-</header>
+<p>Welcome! By purchasing access, subscription, or authorization (“Authorization”) from [Your Business Name], you agree to these Terms of Service (“Terms”). Please read them carefully.</p>
 
-<section class="products">
+<h2>1. Grant of Authorization</h2>
+<p>Upon successful payment, you are granted a non-exclusive, non-transferable right to access and use the services, content, or digital products you purchased (the “Services”). This Authorization is for personal use only, unless otherwise specified.</p>
 
-<div class="card">
-  <h2>Temp Woofer</h2>
-  <select>
-    <option>1 Day - $3.99</option>
-    <option>1 Week - $13.99</option>
-    <option>1 Month - $29.99</option>
-    <option>Lifetime - $79.99</option>
-  </select>
-  <button class="btn" onclick="window.location.href='payment.html'">Buy Now</button>
-</div>
+<h2>2. Payment Terms</h2>
+<p>All payments are processed securely through <strong>Stripe, Inc.</strong>. By purchasing an Authorization, you agree to pay the fees stated at the time of checkout. You are responsible for any taxes applicable to your purchase.</p>
 
-<div class="card">
-  <h2>FN Ultimate</h2>
-  <select>
-    <option>1 Day - $4.99</option>
-    <option>1 Week - $16.99</option>
-    <option>1 Month - $33.99</option>
-    <option>Lifetime - $85.99</option>
-  </select>
-  <button class="btn" onclick="window.location.href='payment.html'">Buy Now</button>
-</div>
+<p>If you have a recurring subscription, payments will be automatically charged according to the billing interval selected at checkout. You may cancel recurring subscriptions according to Section 4 below.</p>
 
-</section>
+<h2>3. Refunds & Cancellations</h2>
+<p>Because this is a digital Authorization, refunds are generally <strong>not available</strong> unless required by law. You may cancel a recurring subscription at any time via your account or by contacting support, but any payments already processed are non-refundable.</p>
 
-<!-- HOW IT WORKS -->
-<section class="info">
-  <h2>How It Works</h2>
-  <p>
-  Choose your plan, complete the payment, and contact our support team with your proof of purchase.
-  Our staff will verify your order and provide access instructions.
-  </p>
-</section>
+<h2>4. Prohibited Uses</h2>
+<p>You may not:</p>
+<ul>
+  <li>Resell, redistribute, or share your Authorization with others;</li>
+  <li>Use the Services for illegal purposes;</li>
+  <li>Reverse-engineer, copy, or modify any content, software, or systems provided.</li>
+</ul>
 
-<!-- DELIVERY -->
-<section class="info">
-  <h2>Delivery Expectations</h2>
-  <p>
-  Most orders are handled within minutes during support hours.
-  In busy periods, delivery may take longer. Please be patient.
-  </p>
-</section>
+<h2>5. Intellectual Property</h2>
+<p>All content, services, and software remain the property of [Your Business Name] or its licensors. You are granted only the limited rights described in these Terms.</p>
 
-<!-- SUPPORT HOURS -->
-<section class="info">
-  <h2>Support Hours</h2>
-  <p>
-  Support is typically available daily. Response times may vary depending on workload and time zone.
-  </p>
-</section>
+<h2>6. Termination</h2>
+<p>We reserve the right to revoke your Authorization for violations of these Terms, prohibited use, or abuse of our services.</p>
 
-<!-- POLICY -->
-<section class="info">
-  <h2>Policy</h2>
-  <p>
-  All sales are considered final once access has been delivered.
-  By purchasing, you agree to follow our terms of service.
-  </p>
-</section>
+<h2>7. Limitation of Liability</h2>
+<p>To the fullest extent permitted by law, [Your Business Name] is not liable for any direct, indirect, incidental, or consequential damages arising from your use of the Services.</p>
 
-<footer>
-© 2025 Revive.LLC
-</footer>
+<h2>8. Governing Law</h2>
+<p>These Terms are governed by the laws of [Your Country/State]. Any disputes must be resolved in the courts of this jurisdiction.</p>
 
-<script>
-const menu=document.getElementById("menuBtn");
-const dropdown=menu.querySelector(".dropdown");
-menu.addEventListener("click",(e)=>{e.stopPropagation();dropdown.classList.toggle("show");});
-document.addEventListener("click",()=>dropdown.classList.remove("show"));
-</script>
+<h2>9. Changes to Terms</h2>
+<p>We may update these Terms from time to time. The current version will always be available at this URL. Continued use of the Services constitutes acceptance of the updated Terms.</p>
+
+<h2>10. Contact</h2>
+<p>If you have questions, contact us at: <a href="mailto:support@yourdomain.com">support@yourdomain.com</a></p>
 
 </body>
 </html>
